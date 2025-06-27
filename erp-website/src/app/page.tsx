@@ -8,6 +8,7 @@ import ServicesSection from "@/components/custom/services-section";
 export default function Home() {
   return (
     <>
+    {/* test */}
       <Navbar />
       <IntroSection />
       <AboutSection />
