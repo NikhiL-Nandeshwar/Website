@@ -14,10 +14,7 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(!isOpen)
 
     useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 50)
-        }
-
+        const onScroll = () => setScrolled(window.scrollY > 50)
         window.addEventListener("scroll", onScroll)
         return () => window.removeEventListener("scroll", onScroll)
     }, [])
@@ -27,11 +24,11 @@ export default function Navbar() {
             className={clsx(
                 "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out",
                 scrolled
-                    ? "bg-white shadow-md text-gray-800"
-                    : "bg-transparent text-cyan-700"
+                    ? "bg-white dark:bg-gray-800 shadow-md text-gray-800 dark:text-gray-100"
+                    : "bg-transparent text-cyan-700 dark:text-cyan-400"
             )}
         >
-            <div className="container mx-auto px-12 py-3 flex items-center justify-between text-cyan-700 dark:text-cyan-600">
+            <div className="max-w-screen-xl mx-auto px-5 sm:px-8 md:px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight">
                     <Image
                         src="/logo.png"
@@ -44,18 +41,10 @@ export default function Navbar() {
                 </Link>
 
                 <nav className="hidden md:flex gap-6 items-center font-medium">
-                    <Link href="#about" className="hover:text-cyan-400 transition-colors">
-                        About
-                    </Link>
-                    <Link href="#services" className="hover:text-cyan-400 transition-colors">
-                        Services
-                    </Link>
-                    <Link href="#features" className="hover:text-cyan-400 transition-colors">
-                        Features
-                    </Link>
-                    <Link href="#footer" className="hover:text-cyan-400 transition-colors">
-                        Contact
-                    </Link>
+                    <Link href="#about" className="hover:text-cyan-400 transition-colors">About</Link>
+                    <Link href="#services" className="hover:text-cyan-400 transition-colors">Services</Link>
+                    <Link href="#features" className="hover:text-cyan-400 transition-colors">Features</Link>
+                    <Link href="#footer" className="hover:text-cyan-400 transition-colors">Contact</Link>
                     <ToggleTheme />
                 </nav>
 
@@ -65,27 +54,33 @@ export default function Navbar() {
                     onClick={toggleMenu}
                     aria-label="Toggle menu"
                 >
-                    {isOpen ? (
-                        <X className="w-6 h-6" />
-                    ) : (
-                        <Menu className="w-6 h-6" />
-                    )}
+                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
             </div>
 
             {/* Mobile Dropdown */}
             {isOpen && (
-                <nav className={clsx(
-                    "md:hidden px-6 pb-4 space-y-3 py-2 text-sm font-medium transition-all",
-                    scrolled
-                        ? "bg-white text-gray-800"
-                        : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
-                )}>
-                    <Link href="#about" className="block hover:text-cyan-400">About</Link>
-                    <Link href="#services" className="block hover:text-cyan-400">Services</Link>
-                    <Link href="#features" className="block hover:text-cyan-400">Features</Link>
-                    <Link href="#footer" className="block hover:text-cyan-400">Contact</Link>
-                    <ToggleTheme />
+                <nav
+                    className={clsx(
+                        "md:hidden px-6 pb-4 space-y-3 py-2 text-sm font-medium transition-all",
+                        scrolled
+                            ? "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100"
+                            : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
+                    )}
+                >
+                    {["about", "services", "features", "footer"].map((id) => (
+                        <Link
+                            key={id}
+                            href={`#${id}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block hover:text-cyan-300"
+                        >
+                            {id.charAt(0).toUpperCase() + id.slice(1)}
+                        </Link>
+                    ))}
+                    <div className="pt-2">
+                        <ToggleTheme />
+                    </div>
                 </nav>
             )}
         </header>

@@ -5,28 +5,31 @@ import { motion } from "framer-motion"
 
 const features = [
     {
-        title: "Built for fundamentals to advanced",
-        desc: "Our ERP and solutions are crafted with Indian core education system in mind — from fee structures till the time of leaving certificates.",
+        title: "Built for Fundamentals to Advanced",
+        desc: "Our ERP is crafted with India's educational ecosystem in mind — from fee structures to transfer certificates.",
         icon: ShieldCheck,
     },
     {
-        title: "Modular, Scalable Architecture and Smart Website",
-        desc: "Start small and grow big — New features along with well designed own website.",
+        title: "Modular & Scalable Architecture",
+        desc: "Start small and scale seamlessly. Add new ERP modules or launch your own institutional website as you grow.",
         icon: Layers3,
     },
     {
-        title: "Digital Presence and Quick Support",
-        desc: "From Instagram to Google Ads — We help you build a strong online presence, Also get prompt onboarding, training, and dedicated support.",
+        title: "Digital Presence & Dedicated Support",
+        desc: "From SEO to Ads — we ensure you're visible online. Enjoy quick onboarding, training, and ongoing support.",
         icon: Zap,
     },
 ]
 
 export default function FeaturesSection() {
     return (
-        <section id="features" className="py-10 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400 px-5">
-            <div className="container mx-auto px-8 text-center">
+        <section
+            id="features"
+            className="py-10 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400"
+        >
+            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.h2
-                    className="text-4xl font-bold mb-4 dark:text-gray-500"
+                    className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-600"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -36,20 +39,21 @@ export default function FeaturesSection() {
                 </motion.h2>
 
                 <motion.p
-                    className="text-gray-600 max-w-2xl mx-auto mb-12"
+                    className="text-gray-600 dark:text-gray-700 max-w-2xl mx-auto mb-12"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                     viewport={{ once: true }}
                 >
-                    More than just software — we partner with you to build technology foundations that last. Here is what sets us apart.
+                    More than just software — we partner with you to build strong technology foundations.
+                    Here's what makes us stand apart.
                 </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
                     {features.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-white dark:bg-gray-200 border border-teal-500 rounded-2xl p-8 shadow-sm cursor-pointer transition hover:shadow-lg"
+                            className="bg-gradient-to-br from-teal-50 to-white dark:from-gray-100 dark:to-gray-300 border border-teal-500 rounded-2xl p-8 shadow-sm hover:shadow-md transition cursor-pointer"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             whileHover={{
@@ -58,13 +62,14 @@ export default function FeaturesSection() {
                                 scale: 1.05,
                                 transition: { type: "spring", stiffness: 150, damping: 8 },
                             }}
-
                             transition={{ delay: 0.3 + idx * 0.2, duration: 0.5 }}
                             viewport={{ once: true }}
                         >
                             <item.icon className="text-teal-600 mb-4" size={30} />
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">{item.title}</h3>
-                            <p className="text-sm text-gray-600">{item.desc}</p>
+                            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-900 mb-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 hover:after:w-full after:transition-all after:duration-300">
+                                {item.title}
+                            </h3>
+                            <p className="text-base text-gray-600 dark:text-gray-700">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

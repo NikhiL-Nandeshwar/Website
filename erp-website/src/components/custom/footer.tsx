@@ -11,19 +11,28 @@ import {
 
 export default function Footer() {
     return (
-        <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 pt-5 pb-4 border-t border-gray-300 dark:border-cyan-800 px-8 text-sm dark:text-gray-300">
-            <div className="container mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 px-5">
-                {/* Brand Info */}
+        <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 px-6 py-6 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
+            <div className="max-w-screen-xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+                
+                {/* Social Presence */}
                 <div>
                     <h3 className="text-base font-semibold text-cyan-600 mb-2">Social Presence</h3>
                     <p className="mb-3 leading-relaxed">
-                        Let’s grow together!! Catch all our updates on your favorite platforms
+                        Let’s grow together! Follow us for updates and insights across platforms.
                     </p>
-                    <div className="flex space-x-2">
-                        <a href="#"><Twitter className="w-5 h-5 hover:text-cyan-700 text-cyan-500" /></a>
-                        <a href="#"><Facebook className="w-5 h-5 hover:text-blue-700 text-blue-600" /></a>
-                        <a href="#"><Instagram className="w-5 h-5 hover:text-rose-700 text-rose-600" /></a>
-                        <a href="#"><Linkedin className="w-5 h-5 hover:text-sky-800 text-sky-700" /></a>
+                    <div className="flex gap-3">
+                        <a href="#" aria-label="Twitter">
+                            <Twitter className="w-5 h-5 text-cyan-500 hover:text-cyan-700 transition" />
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-700 transition" />
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <Instagram className="w-5 h-5 text-rose-600 hover:text-rose-700 transition" />
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <Linkedin className="w-5 h-5 text-sky-700 hover:text-sky-800 transition" />
+                        </a>
                     </div>
                 </div>
 
@@ -31,18 +40,18 @@ export default function Footer() {
                 <div>
                     <h4 className="text-base font-semibold text-cyan-600 mb-2">Quick Links</h4>
                     <ul className="space-y-1">
-                        <li><a href="#" className="hover:text-cyan-600">Home</a></li>
-                        <li><a href="#about" className="hover:text-cyan-600">About</a></li>
-                        <li><a href="#services" className="hover:text-cyan-600">Services</a></li>
-                        <li><a href="#features" className="hover:text-cyan-600">Features</a></li>
-                        <li><a href="#" className="hover:text-cyan-600">Privacy Policy</a></li>
+                        <li><a href="#" className="hover:text-cyan-600 transition">Home</a></li>
+                        <li><a href="#about" className="hover:text-cyan-600 transition">About</a></li>
+                        <li><a href="#services" className="hover:text-cyan-600 transition">Services</a></li>
+                        <li><a href="#features" className="hover:text-cyan-600 transition">Features</a></li>
+                        <li><a href="#" className="hover:text-cyan-600 transition">Privacy Policy</a></li>
                     </ul>
                 </div>
 
-                {/* Contact */}
+                {/* Contact Info */}
                 <div>
                     <h4 className="text-base font-semibold text-cyan-600 mb-2">Contact</h4>
-                    <ul className="space-y-1 text-sm">
+                    <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 mt-0.5" />
                             <a
@@ -75,7 +84,6 @@ export default function Footer() {
                     </ul>
                 </div>
 
-
                 {/* Offerings */}
                 <div>
                     <h4 className="text-base font-semibold text-cyan-600 mb-2">Offerings</h4>
@@ -88,8 +96,8 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Bottom Note */}
-            <div className="text-center text-xs text-gray-500 dark:text-gray-300 mt-6 border-t border-teal-600 pt-3">
+            {/* Bottom Copyright */}
+            <div className="text-center text-xs text-gray-500 dark:text-gray-300 mt-10 border-t pt-4 border-teal-600">
                 © {new Date().getFullYear()} Demo Company. All rights reserved.
             </div>
         </footer>
