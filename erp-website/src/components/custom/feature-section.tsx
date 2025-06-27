@@ -49,8 +49,7 @@ export default function FeaturesSection() {
                     {features.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-white dark:bg-gray-200 border border-teal-500 rounded-2xl p-8 shadow-sm cursor-pointer transition hover:shadow-lg 
-                                        hover:bg-cyan-50"
+                            className="bg-white dark:bg-gray-200 border border-teal-500 rounded-2xl p-8 shadow-sm cursor-pointer transition hover:shadow-lg"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             whileHover={{

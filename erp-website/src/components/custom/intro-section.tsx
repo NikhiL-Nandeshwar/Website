@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 export default function IntroSection() {
     return (
         <section id="intro"
-             className="bg-gradient-to-r from-cyan-50 to-white dark:from-gray-600 dark:to-gray-700 py-16 px-4">
+             className="bg-gradient-to-r from-cyan-50 to-white dark:from-gray-600 dark:to-gray-700 py-20 px-4">
             <div className="container mx-auto px-6 md:px-10 flex flex-col-reverse md:flex-row items-center gap-10">
                 {/* Left Content */}
                 <div className="md:w-1/2 text-center md:text-left">
-                    <h1 className="text-2xl font-bold leading-tight text-gray-900 dark:text-gray-400 mb-6">
+                    <h1 className="text-3xl font-bold leading-tight text-gray-900 dark:text-gray-400 mb-6">
                         Powering <span className="text-cyan-600">Institutions</span>,<br />
                         Accelerating <span className="text-cyan-600">Digital Growth</span>
                     </h1>

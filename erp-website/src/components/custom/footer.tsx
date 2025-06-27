@@ -11,14 +11,13 @@ import {
 
 export default function Footer() {
     return (
-        <footer id="footer" className="bg-zinc-200 text-gray-700 pt-6 pb-4 border-t border-gray-200 px-6 text-sm">
+        <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 pt-5 pb-4 border-t border-gray-300 dark:border-cyan-800 px-8 text-sm dark:text-gray-300">
             <div className="container mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 px-5">
-
                 {/* Brand Info */}
                 <div>
-                    <h3 className="text-lg font-bold text-cyan-600 mb-2">Demo Company</h3>
+                    <h3 className="text-base font-semibold text-cyan-600 mb-2">Social Presence</h3>
                     <p className="mb-3 leading-relaxed">
-                        Empowering institutions and businesses with ERP, websites, and digital growth.
+                        Let’s grow together!! Catch all our updates on your favorite platforms
                     </p>
                     <div className="flex space-x-2">
                         <a href="#"><Twitter className="w-5 h-5 hover:text-cyan-700 text-cyan-500" /></a>
@@ -43,7 +42,7 @@ export default function Footer() {
                 {/* Contact */}
                 <div>
                     <h4 className="text-base font-semibold text-cyan-600 mb-2">Contact</h4>
-                    <ul className="space-y-1 text-sm text-gray-700">
+                    <ul className="space-y-1 text-sm">
                         <li className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 mt-0.5" />
                             <a
@@ -90,7 +89,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Note */}
-            <div className="text-center text-xs text-gray-500 mt-6 border-t border-teal-600 pt-3">
+            <div className="text-center text-xs text-gray-500 dark:text-gray-300 mt-6 border-t border-teal-600 pt-3">
                 © {new Date().getFullYear()} Demo Company. All rights reserved.
             </div>
         </footer>
