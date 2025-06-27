@@ -20,7 +20,7 @@ export default function IntroSection() {
                     </h1>
 
                     <p className="text-gray-600 dark:text-cyan-100 text-base sm:text-lg mb-6 max-w-xl mx-auto md:mx-0">
-                        Build smarter systems with our all-in-one solutions: Educational ERP, custom web portals, and digital marketing strategies — tailored to grow schools, colleges, and businesses in today’s fast-paced world.
+                        Build smarter systems with our all-in-one solutions: Educational ERP, custom web portals, and digital marketing strategies — tailored to grow schools, colleges, educational institutes, and businesses in today’s fast-paced world.
                     </p>
 
                     <Link href="#about">

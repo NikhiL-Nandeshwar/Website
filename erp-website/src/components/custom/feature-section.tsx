@@ -30,9 +30,9 @@ export default function FeaturesSection() {
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.h2
                     className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-600"
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: -16 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                 >
                     Built to Help You Succeed

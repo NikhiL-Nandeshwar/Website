@@ -7,6 +7,8 @@ import {
     CheckCircle2,
 } from "lucide-react"
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 export default function ServicesSection() {
     const columns = [
         {
@@ -55,32 +57,36 @@ export default function ServicesSection() {
     return (
         <section id="services" className="py-12 px-5 bg-white dark:bg-gray-800">
             <div className="max-w-screen-xl mx-auto px-6 md:px-10 text-center">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-200">Our Core Services</h2>
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+                    Our Core Services
+                </h2>
                 <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
                     All-in-one digital transformation: Whether you're a school, college, or startup — our ERP systems, websites, and marketing strategies are tailored to scale your impact.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                     {columns.map((col, idx) => (
-                        <div
+                        <Card
                             key={idx}
-                            className="bg-gradient-to-br from-cyan-50 via-slate-50 to-white dark:from-cyan-900 dark:to-gray-700 border border-cyan-100 dark:border-cyan-700 p-6 rounded-2xl shadow-md hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1 transition-transform duration-300"
+                            className="bg-gradient-to-br from-cyan-50 via-slate-50 to-white dark:from-cyan-900 dark:to-gray-700 border dark:border-cyan-700 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1 transition-transform duration-300"
                         >
-                            <div className="flex items-center gap-3 mb-4">
+                            <CardHeader className="flex flex-row items-center gap-3 pb-2">
                                 <col.icon size={24} className={col.color} />
-                                <h3 className={`text-xl font-semibold ${col.color}`}>
+                                <CardTitle className={`text-xl font-semibold ${col.color}`}>
                                     {col.title}
-                                </h3>
-                            </div>
-                            <ul className="space-y-2 text-[16px] text-gray-700 dark:text-gray-300">
-                                {col.points.map((point, i) => (
-                                    <li key={i} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-green-500 dark:text-green-400 mt-1" />
-                                        <span>{point}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-2 text-[16px] text-gray-700 dark:text-gray-300 mt-2">
+                                    {col.points.map((point, i) => (
+                                        <li key={i} className="flex items-start gap-2">
+                                            <CheckCircle2 className="w-4 h-4 text-green-500 dark:text-green-400 mt-1" />
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
+                        </Card>
                     ))}
                 </div>
             </div>
