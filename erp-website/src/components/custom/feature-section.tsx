@@ -23,10 +23,10 @@ const features = [
 
 export default function FeaturesSection() {
     return (
-        <section id="features" className="py-10 bg-gradient-to-b from-white to-gray-50 px-5">
+        <section id="features" className="py-10 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400 px-5">
             <div className="container mx-auto px-8 text-center">
                 <motion.h2
-                    className="text-4xl font-bold mb-4"
+                    className="text-4xl font-bold mb-4 dark:text-gray-500"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                     {features.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-white border border-teal-500 rounded-2xl p-8 shadow-sm cursor-pointer transition hover:shadow-lg 
+                            className="bg-white dark:bg-gray-200 border border-teal-500 rounded-2xl p-8 shadow-sm cursor-pointer transition hover:shadow-lg 
                                         hover:bg-cyan-50"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

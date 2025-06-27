@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import clsx from "clsx"
 import Image from "next/image"
+import ToggleTheme from "../theme/toggle-theme"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -30,10 +31,10 @@ export default function Navbar() {
                     : "bg-transparent text-cyan-700"
             )}
         >
-            <div className="container mx-auto px-12 py-3 flex items-center justify-between text-cyan-700">
+            <div className="container mx-auto px-12 py-3 flex items-center justify-between text-cyan-700 dark:text-cyan-600">
                 <Link href="/" className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight">
                     <Image
-                        src="/logo.png" // or /logo.svg
+                        src="/logo.png"
                         alt="Logo"
                         width={32}
                         height={32}
@@ -43,18 +44,19 @@ export default function Navbar() {
                 </Link>
 
                 <nav className="hidden md:flex gap-6 items-center font-medium">
-                    <Link href="#about" className="hover:text-cyan-600 transition-colors">
+                    <Link href="#about" className="hover:text-cyan-400 transition-colors">
                         About
                     </Link>
-                    <Link href="#services" className="hover:text-cyan-600 transition-colors">
+                    <Link href="#services" className="hover:text-cyan-400 transition-colors">
                         Services
                     </Link>
-                    <Link href="#features" className="hover:text-cyan-600 transition-colors">
+                    <Link href="#features" className="hover:text-cyan-400 transition-colors">
                         Features
                     </Link>
-                    <Link href="#footer" className="hover:text-cyan-600 transition-colors">
+                    <Link href="#footer" className="hover:text-cyan-400 transition-colors">
                         Contact
                     </Link>
+                    <ToggleTheme />
                 </nav>
 
                 {/* Mobile Toggle */}
@@ -74,15 +76,16 @@ export default function Navbar() {
             {/* Mobile Dropdown */}
             {isOpen && (
                 <nav className={clsx(
-                    "md:hidden px-6 pb-4 space-y-3 text-sm font-medium transition-all",
+                    "md:hidden px-6 pb-4 space-y-3 py-2 text-sm font-medium transition-all",
                     scrolled
                         ? "bg-white text-gray-800"
-                        : "bg-gradient-to-b from-cyan-700 to-cyan-900 text-white"
+                        : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
                 )}>
-                    <Link href="#about" className="block hover:text-cyan-600">About</Link>
-                    <Link href="#services" className="block hover:text-cyan-600">Services</Link>
-                    <Link href="#features" className="block hover:text-cyan-600">Features</Link>
-                    <Link href="#footer" className="block hover:text-cyan-600">Contact</Link>
+                    <Link href="#about" className="block hover:text-cyan-400">About</Link>
+                    <Link href="#services" className="block hover:text-cyan-400">Services</Link>
+                    <Link href="#features" className="block hover:text-cyan-400">Features</Link>
+                    <Link href="#footer" className="block hover:text-cyan-400">Contact</Link>
+                    <ToggleTheme />
                 </nav>
             )}
         </header>
