@@ -12,11 +12,11 @@ import {
 export default function Footer() {
     return (
         <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 px-6 py-6 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
-            <div className="max-w-screen-xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            <div className="max-w-screen-xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4 text-[17px]">
                 
                 {/* Social Presence */}
                 <div>
-                    <h3 className="text-base font-semibold text-cyan-600 mb-2">Social Presence</h3>
+                    <h3 className="font-semibold text-cyan-600 mb-2">Social Presence</h3>
                     <p className="mb-3 leading-relaxed">
                         Let’s grow together! Follow us for updates and insights across platforms.
                     </p>
@@ -31,14 +31,14 @@ export default function Footer() {
                             <Instagram className="w-5 h-5 text-rose-600 hover:text-rose-700 transition" />
                         </a>
                         <a href="#" aria-label="LinkedIn">
-                            <Linkedin className="w-5 h-5 text-sky-700 hover:text-sky-800 transition" />
+                            <Linkedin className="w-5 h-5 text-sky-700 dark:text-sky-500 hover:text-sky-800 transition" />
                         </a>
                     </div>
                 </div>
 
                 {/* Quick Links */}
                 <div>
-                    <h4 className="text-base font-semibold text-cyan-600 mb-2">Quick Links</h4>
+                    <h4 className="font-semibold text-cyan-600 mb-2">Quick Links</h4>
                     <ul className="space-y-1">
                         <li><a href="#" className="hover:text-cyan-600 transition">Home</a></li>
                         <li><a href="#about" className="hover:text-cyan-600 transition">About</a></li>
@@ -50,7 +50,7 @@ export default function Footer() {
 
                 {/* Contact Info */}
                 <div>
-                    <h4 className="text-base font-semibold text-cyan-600 mb-2">Contact</h4>
+                    <h4 className="font-semibold text-cyan-600 mb-2">Contact</h4>
                     <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 mt-0.5" />
@@ -86,7 +86,7 @@ export default function Footer() {
 
                 {/* Offerings */}
                 <div>
-                    <h4 className="text-base font-semibold text-cyan-600 mb-2">Offerings</h4>
+                    <h4 className="font-semibold text-cyan-600 mb-2">Offerings</h4>
                     <ul className="space-y-1">
                         <li>ERP Solutions</li>
                         <li>Website Development</li>
@@ -97,7 +97,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Copyright */}
-            <div className="text-center text-xs text-gray-500 dark:text-gray-300 mt-10 border-t pt-4 border-teal-600">
+            <div className="text-center text-base text-gray-500 dark:text-gray-300 mt-10 border-t pt-4 border-teal-600">
                 © {new Date().getFullYear()} Demo Company. All rights reserved.
             </div>
         </footer>
