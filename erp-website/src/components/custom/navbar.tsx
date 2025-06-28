@@ -29,6 +29,7 @@ export default function Navbar() {
             )}
         >
             <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+                {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight">
                     <Image
                         src="/logo.png"
@@ -40,6 +41,7 @@ export default function Navbar() {
                     Demo Company
                 </Link>
 
+                {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center font-medium">
                     <Link href="#about" className="hover:text-cyan-400 transition-colors">About</Link>
                     <Link href="#services" className="hover:text-cyan-400 transition-colors">Services</Link>
@@ -48,14 +50,13 @@ export default function Navbar() {
                     <ToggleTheme />
                 </nav>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden"
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
+                {/* Mobile: Toggle Theme & Menu */}
+                <div className="md:hidden flex items-center gap-4">
+                    <ToggleTheme />
+                    <button onClick={toggleMenu} aria-label="Toggle menu">
+                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Dropdown */}
@@ -78,9 +79,6 @@ export default function Navbar() {
                             {id.charAt(0).toUpperCase() + id.slice(1)}
                         </Link>
                     ))}
-                    <div className="pt-2">
-                        <ToggleTheme />
-                    </div>
                 </nav>
             )}
         </header>
