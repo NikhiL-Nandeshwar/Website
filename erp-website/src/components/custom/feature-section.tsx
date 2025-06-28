@@ -25,9 +25,9 @@ export default function FeaturesSection() {
     return (
         <section
             id="features"
-            className="py-10 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400"
+            className="py-9 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400"
         >
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="max-w-screen-xl mx-auto px-4 md:px-10 text-center">
                 <motion.h2
                     className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-600"
                     initial={{ opacity: 0, y: -16 }}

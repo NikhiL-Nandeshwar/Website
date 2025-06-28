@@ -55,8 +55,8 @@ export default function ServicesSection() {
     ]
 
     return (
-        <section id="services" className="py-12 px-5 bg-white dark:bg-gray-800">
-            <div className="max-w-screen-xl mx-auto px-6 md:px-10 text-center">
+        <section id="services" className="py-10 px-5 bg-white dark:bg-gray-800">
+            <div className="max-w-screen-xl mx-auto px-6 text-center">
                 <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-200">
                     Our Core Services
                 </h2>

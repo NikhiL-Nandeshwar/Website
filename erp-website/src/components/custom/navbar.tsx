@@ -28,7 +28,7 @@ export default function Navbar() {
                     : "bg-transparent text-cyan-700 dark:text-cyan-400"
             )}
         >
-            <div className="max-w-screen-xl mx-auto px-5 sm:px-8 md:px-4 py-3 flex items-center justify-between">
+            <div className="max-w-screen-xl mx-auto sm:px-8 md:px-8 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight">
                     <Image
                         src="/logo.png"

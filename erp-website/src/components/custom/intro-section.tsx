@@ -10,7 +10,7 @@ export default function IntroSection() {
             id="intro"
             className="bg-gradient-to-r from-cyan-50 to-white dark:from-gray-600 dark:to-gray-700 py-20"
         >
-            <div className="max-w-screen-xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center gap-10">
+            <div className="max-w-screen-xl mx-auto px-5 sm:px-6 md:px-9 flex flex-col-reverse md:flex-row items-center gap-10">
                 
                 {/* Left Content */}
                 <div className="md:w-1/2 text-center md:text-left">
