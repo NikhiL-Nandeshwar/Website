@@ -17,6 +17,7 @@ export default function AboutSection() {
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-cover"
+                                priority
                             />
                         </div>
                     </div>

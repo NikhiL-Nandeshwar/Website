@@ -69,7 +69,7 @@ export default function Navbar() {
                             : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
                     )}
                 >
-                    {["about", "services", "features", "footer"].map((id) => (
+                    {["about", "services", "features", "contact"].map((id) => (
                         <Link
                             key={id}
                             href={`#${id}`}
