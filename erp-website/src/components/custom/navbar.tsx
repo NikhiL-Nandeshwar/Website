@@ -51,7 +51,7 @@ export default function Navbar() {
                 </nav>
 
                 {/* Mobile: Toggle Theme & Menu */}
-                <div className="md:hidden flex items-center gap-4">
+                <div className="md:hidden flex items-center gap-2">
                     <ToggleTheme />
                     <button onClick={toggleMenu} aria-label="Toggle menu">
                         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

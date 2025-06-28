@@ -36,7 +36,7 @@ export default function ToggleTheme() {
             className="p-2 rounded-full border border-cyan-200 dark:border-yellow-700 shadow bg-white dark:bg-gray-800 hover:scale-105 transition"
             aria-label="Toggle Theme"
         >
-            {isDark ? <Sun className="w-5 h-5 text-yellow-500" /> : <Moon className="w-5 h-5 text-gray-900" />}
+            {isDark ? <Sun className="w-5 h-5 text-yellow-500" /> : <Moon className="w-5 h-5 text-cyan-700" />}
         </button>
     )
 }
