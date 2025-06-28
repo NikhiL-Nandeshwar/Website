@@ -61,7 +61,7 @@ export default function ServicesSection() {
                     Our Core Services
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-                    All-in-one digital transformation: Whether you're a school, college, or startup — our ERP systems, websites, and marketing strategies are tailored to scale your impact.
+                    All-in-one digital transformation: Whether you&apos;re a school, college, or startup — our ERP systems, websites, and marketing strategies are tailored to scale your impact.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">

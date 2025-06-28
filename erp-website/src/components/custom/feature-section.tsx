@@ -46,7 +46,7 @@ export default function FeaturesSection() {
                     viewport={{ once: true }}
                 >
                     More than just software — we partner with you to build strong technology foundations.
-                    Here's what makes us stand apart.
+                    Here&apos;s what makes us stand apart.
                 </motion.p>
 
                 <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
