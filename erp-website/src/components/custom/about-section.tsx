@@ -13,7 +13,7 @@ export default function AboutSection() {
                         <div className="rounded-lg overflow-hidden shadow-lg max-w-lg max-h-full">
                             <Image
                                 src="/system.png"
-                                alt="ERP Setup Demo"
+                                alt="ERP Setup"
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-cover"
@@ -29,7 +29,7 @@ export default function AboutSection() {
                             Transforming Education & Business Through Technology
                         </h3>
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
-                            At <span className="font-semibold text-cyan-600 dark:text-gray-100">Demo Company</span>, we’re on a mission to simplify digital transformation for schools, educational institutes and businesses. Our team blends innovation, functionality, and user-first thinking to deliver results that matter.
+                            At <span className="font-semibold text-cyan-600 dark:text-gray-100">NexSpire</span>, we’re on a mission to simplify digital transformation for schools, educational institutes and businesses. Our team blends innovation, functionality, and user-first thinking to deliver results that matter.
                         </p>
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
                             From helping a small school digitize its entire academic workflow to enabling a startup’s online growth — we build solutions that are reliable, scalable, and tailored to your vision.
