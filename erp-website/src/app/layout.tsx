@@ -16,8 +16,8 @@ const geistMono = localFont({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "Demo",
-  description: "Demo Website",
+  title: "NexSpire",
+  description: "NexSpire Solutions",
 };
 
 export default function RootLayout({

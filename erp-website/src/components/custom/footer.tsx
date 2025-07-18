@@ -60,7 +60,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="hover:text-cyan-700 transition"
                             >
-                                Kolhapur, India
+                                Maharashtra, India
                             </a>
                         </li>
                         <li className="flex items-start gap-2">
@@ -75,10 +75,10 @@ export default function Footer() {
                         <li className="flex items-start gap-2">
                             <Mail className="w-4 h-4 mt-0.5" />
                             <a
-                                href="mailto:support@democompany.in"
+                                href="mailto:support@nexspire.in"
                                 className="hover:text-cyan-700 transition"
                             >
-                                support@democompany.in
+                                support@nexspire.in
                             </a>
                         </li>
                     </ul>
@@ -98,7 +98,7 @@ export default function Footer() {
 
             {/* Bottom Copyright */}
             <div className="text-center text-base text-gray-500 dark:text-gray-300 mt-10 border-t pt-4 border-teal-600">
-                © {new Date().getFullYear()} Demo Company. All rights reserved.
+                © {new Date().getFullYear()} NexSpire Solutions. All rights reserved.
             </div>
         </footer>
     )

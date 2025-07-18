@@ -38,7 +38,7 @@ export default function Navbar() {
                         height={32}
                         className="w-8 h-8"
                     />
-                    Demo Company
+                    NexSpire
                 </Link>
 
                 {/* Desktop Navigation */}
