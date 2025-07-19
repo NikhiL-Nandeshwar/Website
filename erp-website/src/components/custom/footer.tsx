@@ -98,7 +98,7 @@ export default function Footer() {
 
             {/* Bottom Copyright */}
             <div className="text-center text-base text-gray-500 dark:text-gray-300 mt-10 border-t pt-4 border-teal-600">
-                © {new Date().getFullYear()} NexSpire Solutions. All rights reserved.
+                © {new Date().getFullYear()} NexSpire Technologies. All rights reserved.
             </div>
         </footer>
     )
