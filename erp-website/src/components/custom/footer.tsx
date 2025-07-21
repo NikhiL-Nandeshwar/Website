@@ -75,10 +75,10 @@ export default function Footer() {
                         <li className="flex items-start gap-2">
                             <Mail className="w-4 h-4 mt-0.5" />
                             <a
-                                href="mailto:support@nexspire.in"
+                                href="mailto:nexspire-technologies@outlook.com"
                                 className="hover:text-cyan-700 transition"
                             >
-                                support@nexspire.in
+                                nexspire-technologies@outlook.com
                             </a>
                         </li>
                     </ul>
