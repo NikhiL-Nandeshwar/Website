@@ -30,9 +30,9 @@ export default function Navbar() {
         >
             <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-1 text-xl md:text-3xl font-bold tracking-tight">
+                <Link href="/" className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight">
                     <Image
-                        src="/nexspire.png"
+                        src="/logo.png"
                         alt="Logo"
                         width={36}
                         height={36}
