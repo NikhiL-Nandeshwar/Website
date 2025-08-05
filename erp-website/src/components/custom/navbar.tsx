@@ -1,23 +1,85 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import clsx from "clsx"
-import Image from "next/image"
-import ToggleTheme from "../theme/toggle-theme"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import clsx from "clsx";
+import Image from "next/image";
+import ToggleTheme from "../theme/toggle-theme";
+
+const SECTIONS = ["home", "about", "services", "features", "contact"];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false)
-    const [scrolled, setScrolled] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [currentSection, setCurrentSection] = useState<string>("home");
 
-    const toggleMenu = () => setIsOpen(!isOpen)
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 50)
-        window.addEventListener("scroll", onScroll)
-        return () => window.removeEventListener("scroll", onScroll)
-    }, [])
+        const onScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    useEffect(() => {
+        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+            const visibleSections = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+            if (visibleSections.length > 0) {
+                const topSection = visibleSections[0];
+                const id = topSection.target.getAttribute("id");
+                if (id) setCurrentSection(id);
+            }
+        };
+
+        const observer = new IntersectionObserver(handleIntersect, {
+            threshold: 0.4, // Adjusted threshold
+        });
+
+        SECTIONS.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => {
+            SECTIONS.forEach((id) => {
+                const el = document.getElementById(id);
+                if (el) observer.unobserve(el);
+            });
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            let current = "home";
+            let minDistance = Infinity;
+
+            for (const id of SECTIONS) {
+                const section = document.getElementById(id);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top);
+
+                    if (rect.top <= 40 && distance < minDistance) {
+                        minDistance = distance;
+                        current = id;
+                    }
+                }
+            }
+
+            setCurrentSection(current);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial check
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <header
@@ -30,7 +92,10 @@ export default function Navbar() {
         >
             <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight">
+                <Link
+                    href="/"
+                    className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight"
+                >
                     <Image
                         src="/logo.png"
                         alt="Logo"
@@ -43,10 +108,20 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center font-medium">
-                    <Link href="#about" className="hover:text-cyan-400 transition-colors">About</Link>
-                    <Link href="#services" className="hover:text-cyan-400 transition-colors">Services</Link>
-                    <Link href="#features" className="hover:text-cyan-400 transition-colors">Features</Link>
-                    <Link href="#footer" className="hover:text-cyan-400 transition-colors">Contact</Link>
+                    {SECTIONS.map((id) => (
+                        <Link
+                            key={id}
+                            href={`#${id === "contact" ? "contact" : id}`}
+                            className={clsx(
+                                "transition-colors",
+                                currentSection === id
+                                    ? "text-cyan-400"
+                                    : "hover:text-cyan-400"
+                            )}
+                        >
+                            {id.charAt(0).toUpperCase() + id.slice(1)}
+                        </Link>
+                    ))}
                     <ToggleTheme />
                 </nav>
 
@@ -69,22 +144,24 @@ export default function Navbar() {
                             : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
                     )}
                 >
-                    {["about", "services", "features", "contact"].map((id) => {
-                        const hrefId = id === "contact" ? "footer" : id
+                    {["about", "services", "features", "footer"].map((id) => {
+                        const hrefId = id === "contact" ? "footer" : id;
                         return (
                             <Link
                                 key={id}
                                 href={`#${hrefId}`}
                                 onClick={() => setIsOpen(false)}
-                                className="block hover:text-cyan-300"
+                                className={clsx(
+                                    "block hover:text-cyan-300",
+                                    currentSection === hrefId && "text-cyan-200 font-semibold"
+                                )}
                             >
                                 {id.charAt(0).toUpperCase() + id.slice(1)}
                             </Link>
-                        )
+                        );
                     })}
-
                 </nav>
             )}
         </header>
-    )
+    );
 }

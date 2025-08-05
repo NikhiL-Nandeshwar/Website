@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 export default function IntroSection() {
     return (
         <section
-            id="intro"
-            className="bg-gradient-to-r from-cyan-50 to-white dark:from-gray-600 dark:to-gray-700 py-20"
+            id="home"
+            className="bg-gradient-to-r from-cyan-50 to-white dark:from-gray-600 dark:to-gray-700 py-24"
         >
             <div className="max-w-screen-xl mx-auto px-5 sm:px-6 md:px-9 flex flex-col-reverse md:flex-row items-center gap-10">
                 

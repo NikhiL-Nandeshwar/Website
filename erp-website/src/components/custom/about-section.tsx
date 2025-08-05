@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export default function AboutSection() {
     return (
-        <section id="about" className="py-12 bg-white dark:bg-gray-700">
+        <section id="about" className="py-28 bg-white dark:bg-gray-700">
             <div className="max-w-screen-xl mx-auto md:px-10 px-6">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     {/* Left Image */}

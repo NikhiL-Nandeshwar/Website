@@ -25,7 +25,7 @@ export default function FeaturesSection() {
     return (
         <section
             id="features"
-            className="py-9 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400"
+            className="min-h-screen py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-300 dark:to-gray-400"
         >
             <div className="max-w-screen-xl mx-auto px-4 md:px-10 text-center">
                 <motion.h2
@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                     Here&apos;s what makes us stand apart.
                 </motion.p>
 
-                <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2">
                     {features.map((item, idx) => (
                         <motion.div
                             key={idx}

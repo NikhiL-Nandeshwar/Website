@@ -11,9 +11,9 @@ import {
 
 export default function Footer() {
     return (
-        <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 px-9 py-4 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
+        <footer id="contact" className="bg-[#eaeef4] dark:bg-cyan-800 px-9 py-12 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
             <div className="max-w-screen-xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4 text-[17px]">
-                
+
                 {/* Social Presence */}
                 <div>
                     <h3 className="font-semibold text-cyan-600 mb-2">Social Presence</h3>
@@ -60,18 +60,28 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="hover:text-cyan-700 transition"
                             >
-                                Maharashtra, India
+                                Kolhapur, Maharashtra, India
                             </a>
                         </li>
                         <li className="flex items-start gap-2">
                             <Phone className="w-4 h-4 mt-0.5" />
                             <a
-                                href="tel:+919000000000"
+                                href="tel:+917666259073"
                                 className="hover:text-cyan-700 transition"
                             >
-                                +91 90000 00000
+                                +91 76662 59073
                             </a>
                         </li>
+                        <li className="flex items-start gap-2">
+                            <Phone className="w-4 h-4 mt-0.5" />
+                            <a
+                                href="tel:+919075105105"
+                                className="hover:text-cyan-700 transition"
+                            >
+                                +91 90751 05105
+                            </a>
+                        </li>
+
                         <li className="flex items-start gap-2">
                             <Mail className="w-4 h-4 mt-0.5" />
                             <a
