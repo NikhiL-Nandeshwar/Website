@@ -11,8 +11,8 @@ import {
 
 export default function Footer() {
     return (
-        <footer id="contact" className="bg-[#eaeef4] dark:bg-cyan-800 px-9 py-12 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
-            <div className="max-w-screen-xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4 text-[17px]">
+        <footer id="contact" className="bg-[#eaeef4] dark:bg-cyan-800 px-9 py-8 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">
+            <div className="max-w-screen-xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-[16px]">
 
                 {/* Social Presence */}
                 <div>
