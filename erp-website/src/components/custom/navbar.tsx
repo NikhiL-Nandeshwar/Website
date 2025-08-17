@@ -111,7 +111,7 @@ export default function Navbar() {
                     {SECTIONS.map((id) => (
                         <Link
                             key={id}
-                            href={`#${id === "contact" ? "contact" : id}`}
+                            href={`#${id === "contact" ? "footer" : id}`}
                             className={clsx(
                                 "transition-colors",
                                 currentSection === id
@@ -144,7 +144,7 @@ export default function Navbar() {
                             : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
                     )}
                 >
-                    {["about", "services", "features", "footer"].map((id) => {
+                    {["home", "about", "services", "features", "contact"].map((id) => {
                         const hrefId = id === "contact" ? "footer" : id;
                         return (
                             <Link
