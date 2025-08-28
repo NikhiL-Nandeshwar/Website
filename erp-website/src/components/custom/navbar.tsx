@@ -115,7 +115,7 @@ export default function Navbar() {
                             className={clsx(
                                 "transition-colors",
                                 currentSection === id
-                                    ? "text-cyan-400"
+                                    ? "text-cyan-400 dark:text-yellow-600"
                                     : "hover:text-cyan-400"
                             )}
                         >
