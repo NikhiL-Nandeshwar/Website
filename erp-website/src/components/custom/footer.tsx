@@ -9,6 +9,10 @@ import {
     Twitter
 } from "lucide-react"
 
+/**
+ * Footer component – Displays site footer with social links, quick links, contact info, and offerings.
+ * Includes copyright notice and adapts to light/dark themes.
+ */
 export default function Footer() {
     return (
         <footer id="footer" className="bg-[#eaeef4] dark:bg-cyan-800 px-9 py-8 border-t border-gray-300 dark:border-cyan-700 text-sm dark:text-gray-300">

@@ -4,6 +4,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
+/**
+ * IntroSection component – Hero section of the homepage with headline, description, call-to-action button, and illustrative image.
+ * Designed to showcase the product’s value proposition and drive user engagement.
+ */
 export default function IntroSection() {
     return (
         <section

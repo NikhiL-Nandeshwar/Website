@@ -9,6 +9,10 @@ import {
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
+/**
+ * ServicesSection component – Displays the core services offered with icons, descriptions, and key points.
+ * Uses responsive cards to highlight Educational ERP, Website Development, and Digital Marketing solutions.
+ */
 export default function ServicesSection() {
     const columns = [
         {

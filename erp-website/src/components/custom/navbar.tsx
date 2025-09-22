@@ -9,6 +9,10 @@ import ToggleTheme from "../theme/toggle-theme";
 
 const SECTIONS = ["home", "about", "services", "features", "contact"];
 
+/**
+ * Navbar component – Responsive header with logo, section links, scroll highlighting, and theme toggle.
+ * Handles desktop and mobile layouts with animated dropdown menu and current section tracking.
+ */
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);

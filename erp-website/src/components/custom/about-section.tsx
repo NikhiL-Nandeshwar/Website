@@ -3,6 +3,10 @@
 import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
+/**
+ * AboutSection component – Displays the "About Us" section with image, text, and feature list.
+ * Used to highlight company vision, services, and expertise.
+ */
 export default function AboutSection() {
     return (
         <section id="about" className="py-28 bg-white dark:bg-gray-700">

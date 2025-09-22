@@ -21,6 +21,10 @@ const features = [
     },
 ]
 
+/**
+ * FeaturesSection component – Displays key features with animations and hover effects.
+ * Highlights what sets the product or service apart for users.
+ */
 export default function FeaturesSection() {
     return (
         <section
