@@ -24,19 +24,31 @@ export default function Footer() {
                     <p className="mb-3 leading-relaxed">
                         Let’s grow together! Follow us for updates and insights across platforms.
                     </p>
-                    <div className="flex gap-3">
-                        <a href="#" aria-label="Twitter">
-                            <Twitter className="w-5 h-5 text-cyan-500 hover:text-cyan-700 transition" />
-                        </a>
-                        <a href="#" aria-label="Facebook">
-                            <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-700 transition" />
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <Instagram className="w-5 h-5 text-rose-600 hover:text-rose-700 transition" />
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <Linkedin className="w-5 h-5 text-sky-700 dark:text-sky-500 hover:text-sky-800 transition" />
-                        </a>
+                    <div className="flex gap-2">
+                        <button
+                            className="cursor-not-allowed text-cyan-600 opacity-60"
+                            title="Coming soon"
+                        >
+                            <Twitter className="w-5 h-5" />
+                        </button>
+                        <button
+                            className="cursor-not-allowed text-blue-600 opacity-60"
+                            title="Coming soon"
+                        >
+                            <Facebook className="w-5 h-5" />
+                        </button>
+                        <button
+                            className="cursor-not-allowed text-rose-600 opacity-60"
+                            title="Coming soon"
+                        >
+                            <Instagram className="w-5 h-5" />
+                        </button>
+                        <button
+                            className="cursor-not-allowed text-sky-700 dark:text-sky-500 opacity-60"
+                            title="Coming soon"
+                        >
+                            <Linkedin className="w-5 h-5" />
+                        </button>
                     </div>
                 </div>
 

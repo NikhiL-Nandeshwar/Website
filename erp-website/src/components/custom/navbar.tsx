@@ -98,17 +98,25 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight"
+                    className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight"
                 >
                     <Image
                         src="/logo.png"
                         alt="Logo"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8"
+                        width={36}
+                        height={36}
+                        className="w-9 h-9"
                     />
-                    NexSpire
+
+                    {/* Brand Name + Subtext stacked vertically */}
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-cyan-700 dark:text-cyan-400 text-lg md:text-xl">NexSpire</span>
+                        <span className="text-[11px] md:text-xs font-normal text-cyan-700 dark:text-cyan-400 tracking-widest">
+                            TECHNOLOGIES
+                        </span>
+                    </div>
                 </Link>
+
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center font-medium">
