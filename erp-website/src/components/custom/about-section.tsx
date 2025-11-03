@@ -3,15 +3,12 @@
 import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
-/**
- * AboutSection component – Displays the "About Us" section with image, text, and feature list.
- * Used to highlight company vision, services, and expertise.
- */
 export default function AboutSection() {
     return (
-        <section id="about" className="py-28 bg-white dark:bg-gray-700">
+        <section id="about" className="py-24 bg-white dark:bg-gray-700">
             <div className="max-w-screen-xl mx-auto md:px-10 px-6">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
+                    
                     {/* Left Image */}
                     <div className="md:w-1/2 w-full flex justify-center md:block">
                         <div className="rounded-lg overflow-hidden shadow-lg max-w-lg max-h-full">
@@ -28,25 +25,35 @@ export default function AboutSection() {
 
                     {/* Right Content */}
                     <div className="md:w-1/2">
-                        <h2 className="text-3xl font-bold mb-4 dark:text-gray-200">About Us</h2>
+                        <h2 className="text-4xl font-bold mb-4 dark:text-gray-200">About Us</h2>
                         <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                            Transforming Education & Business Through Technology
+                            Simplifying Operations for Institutions, Societies & Businesses
                         </h3>
+
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
-                            At <span className="font-semibold text-cyan-600 dark:text-gray-100">NexSpire</span>, we’re on a mission to simplify digital transformation for schools, educational institutes and businesses. Our team blends innovation, functionality, and user-first thinking to deliver results that matter.
+                            At <span className="font-semibold text-cyan-600 dark:text-gray-100">NexSpire Technologies</span>, we empower organizations through digital innovation. 
+                            Whether it’s managing a school, a housing society, or a growing business — 
+                            our solutions streamline workflows, improve transparency, and enhance decision-making.
                         </p>
+
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
-                            From helping a small school digitize its entire academic workflow to enabling a startup’s online growth — we build solutions that are reliable, scalable, and tailored to your vision.
+                            We specialize in creating powerful, easy-to-use systems — from 
+                            comprehensive Educational ERPs to modern Society Management Software — 
+                            all tailored to meet real-world needs with efficiency and scalability.
                         </p>
+
                         <p className="text-gray-600 mb-6 dark:text-cyan-400">
-                            Our core expertise lies in crafting full-featured Educational ERP systems, building modern websites, and executing digital marketing strategies that drive measurable growth.
+                            Our approach blends smart technology with clean design and practical functionality, 
+                            helping clients reduce manual work and focus on growth.
                         </p>
+
                         <ul className="space-y-3 font-medium text-gray-700 dark:text-cyan-300">
                             {[
-                                "All-in-one Educational ERP: Admissions, academics, finance, biometrics, reports & more.",
-                                "Custom websites designed for performance, usability, and scalability.",
-                                "SEO, branding, and advertising strategies that boost visibility & leads.",
-                                "Dedicated support and custom feature development on demand.",
+                                "Educational ERP covering academics, finance, attendance, communication & more.",
+                                "Society/Apartment Management Software for maintenance, billing & member management.",
+                                "Custom business websites built for performance and brand identity.",
+                                "SEO, social media & digital marketing strategies for measurable growth.",
+                                "Reliable support with flexible, custom feature development.",
                             ].map((point, idx) => (
                                 <li key={idx} className="flex items-start gap-2">
                                     <CheckCircle2 className="text-green-500 mt-1" size={18} />
