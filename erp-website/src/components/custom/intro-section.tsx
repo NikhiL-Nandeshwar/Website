@@ -14,7 +14,7 @@ export default function IntroSection() {
 
                 {/* Left Content */}
                 <div className="md:w-1/2 text-center md:text-left">
-                    <h1 className="text-4xl font-bold leading-tight text-gray-900 dark:text-gray-100 mb-6">
+                    <h1 className="text-4xl font-bold leading-tight text-gray-700 dark:text-gray-100 mb-6">
                         Redefining <span className="text-cyan-600">Education</span> <br />
                         And <span className="text-cyan-600">Businesses</span> <br />
                         With Digital Excellence
