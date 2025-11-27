@@ -37,8 +37,8 @@ export default function AboutSection() {
                         </p>
 
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
-                            We specialize in creating powerful, easy-to-use systems — from 
-                            comprehensive Educational ERPs to modern Society Management Software — 
+                            We specialize in creating powerful, easy-to-use systems — from modern Society Management Software
+                            to business ERP softwares — 
                             all tailored to meet real-world needs with efficiency and scalability.
                         </p>
 
@@ -49,7 +49,7 @@ export default function AboutSection() {
 
                         <ul className="space-y-3 font-medium text-gray-700 dark:text-cyan-300">
                             {[
-                                "Educational ERP covering academics, finance, attendance, communication & more.",
+                                "Business ERP software covering automation part of business requirements.",
                                 "Society/Apartment Management Software for maintenance, billing & member management.",
                                 "Custom business websites built for performance and brand identity.",
                                 "SEO, social media & digital marketing strategies for measurable growth.",

@@ -24,7 +24,7 @@ export default function Footer() {
       className="bg-[#eaeef4] dark:bg-gray-900 px-8 pt-12 pb-8 border-t border-gray-300 dark:border-gray-700 text-sm"
     >
       <div className="max-w-screen-xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-[15px]">
-        
+
         {/* Social Presence */}
         <div>
           <h3 className="font-semibold text-cyan-600 dark:text-cyan-400 mb-3 text-lg">
@@ -113,8 +113,8 @@ export default function Footer() {
             Offerings
           </h4>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Educational ERP Solutions</li>
             <li>Society & Apartment Management Software</li>
+            <li>Business ERP Solutions</li>
             <li>Website Development</li>
             <li>Digital Marketing & SEO</li>
             <li>CRM Integrations</li>

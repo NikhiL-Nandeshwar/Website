@@ -80,8 +80,8 @@ export default function ServicesSection() {
                     Our Core Services
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-                    From schools to housing societies and small businesses — 
-                    NexSpire Technologies delivers modern ERP systems, smart websites, and 
+                    From housing societies to small businesses — 
+                    NexSpire Technologies delivers modern software solutions, smart websites, and 
                     digital marketing strategies that help organizations simplify operations and grow faster.
                 </p>
 
