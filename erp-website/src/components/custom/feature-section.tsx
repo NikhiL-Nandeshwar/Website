@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const features = [
   {
     title: "Smart & Scalable Systems",
-    desc: "Whether it's a school, society, or business — our platforms are built to scale with your operations, offering automation, seamless workflows and a modern user experience.",
+    desc: "Whether it's an apartment, society, or business — our platforms are built to scale with your operations, offering automation, seamless workflows and a modern user experience.",
     icon: Layers3,
   },
   {
