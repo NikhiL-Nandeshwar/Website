@@ -32,7 +32,7 @@ export default function AboutSection() {
 
                         <p className="text-gray-600 mb-4 dark:text-cyan-400">
                             At <span className="font-semibold text-cyan-600 dark:text-gray-100">NexSpire Technologies</span>, we empower organizations through digital innovation. 
-                            Whether it’s managing a school, a housing society, or a growing business — 
+                            Whether it’s managing apartments, a housing society, or a growing business — 
                             our solutions streamline workflows, improve transparency, and enhance decision-making.
                         </p>
 

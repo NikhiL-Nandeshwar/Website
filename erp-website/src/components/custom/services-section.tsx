@@ -13,21 +13,21 @@ import { FaWhatsapp } from "react-icons/fa"
 
 export default function ServicesSection() {
     const columns = [
-        {
-            title: "Educational ERP",
-            icon: FileBarChart2,
-            color: "text-blue-700 dark:text-blue-400",
-            points: [
-                "Admissions, Exams & Attendance Management",
-                "Dynamic Timetables & Custom Report Cards",
-                "Fee Collection, Payroll & Leave Management",
-                "SMS, Email & Notification Integrations",
-                "Library, Hostel & Transport Modules",
-                "Teacher, Student & Parent Portals",
-                "Role-Based Dashboards & Analytics",
-                "Custom Permissions & Reports",
-            ],
-        },
+        // {
+        //     title: "Educational ERP",
+        //     icon: FileBarChart2,
+        //     color: "text-blue-700 dark:text-blue-400",
+        //     points: [
+        //         "Admissions, Exams & Attendance Management",
+        //         "Dynamic Timetables & Custom Report Cards",
+        //         "Fee Collection, Payroll & Leave Management",
+        //         "SMS, Email & Notification Integrations",
+        //         "Library, Hostel & Transport Modules",
+        //         "Teacher, Student & Parent Portals",
+        //         "Role-Based Dashboards & Analytics",
+        //         "Custom Permissions & Reports",
+        //     ],
+        // },
         {
             title: "Society Management Software",
             icon: Building2,
@@ -85,7 +85,7 @@ export default function ServicesSection() {
                     digital marketing strategies that help organizations simplify operations and grow faster.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     {columns.map((col, idx) => (
                         <Card
                             key={idx}
