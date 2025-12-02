@@ -105,7 +105,7 @@ export default function Navbar() {
                         alt="Logo"
                         width={36}
                         height={36}
-                        className="w-9 h-9"
+                        className="w-10 h-10"
                     />
 
                     {/* Brand Name + Subtext stacked vertically */}
