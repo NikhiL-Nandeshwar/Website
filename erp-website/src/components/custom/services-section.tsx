@@ -71,7 +71,7 @@ export default function ServicesSection() {
         },
     ]
 
-    const whatsappNumber = "919561280631"
+    const whatsappNumber = "917666259073"
 
     return (
         <section id="services" className="py-20 px-5 bg-stone-100 dark:bg-gray-800">
