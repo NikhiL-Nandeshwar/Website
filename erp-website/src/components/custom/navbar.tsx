@@ -73,6 +73,7 @@ export default function Navbar() {
                     }
                 }
             }
+
             setCurrentSection(current);
         };
 
@@ -93,29 +94,21 @@ export default function Navbar() {
                     : "bg-transparent text-cyan-700 dark:text-cyan-400"
             )}
         >
-            <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+            <div className="max-w-screen-xl mx-auto px-4 md:px-5 py-0.5 flex items-center justify-between">
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-xl md:text-3xl font-bold tracking-tight"
+                    className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight"
                 >
                     <Image
-                        src="/logo.png"
+                        src="/bg_logo.png"
                         alt="Logo"
-                        width={36}
-                        height={36}
-                        className="w-10 h-10"
+                        width={128}
+                        height={104}
+                        className="w-32 h-26"
+                        priority
                     />
-
-                    {/* Brand Name + Subtext stacked vertically */}
-                    <div className="flex flex-col leading-tight">
-                        <span className="text-cyan-700 dark:text-cyan-400 text-lg md:text-xl">NexSpire</span>
-                        <span className="text-[11px] md:text-xs font-normal text-cyan-700 dark:text-cyan-400 tracking-widest">
-                            TECHNOLOGIES
-                        </span>
-                    </div>
                 </Link>
-
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center font-medium">
