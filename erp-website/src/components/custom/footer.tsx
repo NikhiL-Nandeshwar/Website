@@ -12,11 +12,32 @@ import {
 
 export default function Footer() {
   const socialIcons = [
-    { icon: Twitter, color: "text-cyan-600 dark:text-cyan-400" },
-    { icon: Facebook, color: "text-blue-600 dark:text-blue-400" },
-    { icon: Instagram, color: "text-rose-600 dark:text-rose-400" },
-    { icon: Linkedin, color: "text-sky-700 dark:text-sky-400" },
+    {
+      icon: Twitter,
+      href: "https://x.com/nexspire_tech",
+      color: "text-cyan-600 dark:text-cyan-400",
+      label: "X",
+    },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/17V1UieToF",
+      color: "text-blue-600 dark:text-blue-400",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/nexspire.technologies",
+      color: "text-rose-600 dark:text-rose-400",
+      label: "Instagram",
+    },
+    // {
+    //   icon: Linkedin,
+    //   href: "https://www.linkedin.com/company/nexspire-technologies", 
+    //   color: "text-sky-700 dark:text-sky-400",
+    //   label: "LinkedIn",
+    // },
   ]
+
 
   return (
     <footer
@@ -35,20 +56,19 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 mt-2">
-            {socialIcons.map(({ icon: Icon, color }, i) => (
-              <div key={i} className="relative group">
-                <button
-                  className={`cursor-not-allowed ${color} opacity-70 hover:opacity-100 transition`}
-                >
-                  <Icon className="w-5 h-5" />
-                </button>
-
-                {/* Custom tooltip */}
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs font-medium text-white bg-cyan-800 dark:bg-cyan-700 rounded-md shadow-md opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 whitespace-nowrap">
-                  Coming Soon
-                </span>
-              </div>
+            {socialIcons.map(({ icon: Icon, color, href, label }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className={`${color} opacity-80 hover:opacity-100 transition`}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
             ))}
+
           </div>
         </div>
 
@@ -124,7 +144,7 @@ export default function Footer() {
 
       {/* Divider & Copyright */}
       <div className="mt-10 border-t border-cyan-700 pt-4 text-center text-base text-gray-600 dark:text-gray-400">
-        © {new Date().getFullYear()} <span className="text-cyan-600 dark:text-cyan-400 font-medium">NexSpire Technologies</span>. All rights reserved.
+        © {new Date().getFullYear()} <span className="text-cyan-600 dark:text-cyan-400 font-medium">Nexspire Technologies</span>. All rights reserved.
       </div>
     </footer>
   )

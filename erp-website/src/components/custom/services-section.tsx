@@ -81,7 +81,7 @@ export default function ServicesSection() {
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
                     From housing societies to small businesses — 
-                    NexSpire Technologies delivers modern software solutions, smart websites, and 
+                    Nexspire Technologies delivers modern software solutions, smart websites, and 
                     digital marketing strategies that help organizations simplify operations and grow faster.
                 </p>
 
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                                 <div className="mt-6 flex justify-start">
                                     <Link
                                         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                                            `Hi NexSpire, I'm interested in your ${col.title} service. Can you share more details?`
+                                            `Hi Nexspire, I'm interested in your ${col.title} service. Can you share more details?`
                                         )}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
