@@ -82,7 +82,6 @@ export default function Footer() {
             <li><a href="#about" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition">About</a></li>
             <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Services</a></li>
             <li><a href="#features" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Features</a></li>
-            <li><a href="#" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -134,10 +133,10 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li>Society & Apartment Management Software</li>
-            <li>Business ERP Solutions</li>
+            <li>Business Software Solutions</li>
             <li>Website Development</li>
             <li>Digital Marketing & SEO</li>
-            <li>CRM Integrations</li>
+            {/* <li>CRM Integrations</li> */}
           </ul>
         </div>
       </div>
