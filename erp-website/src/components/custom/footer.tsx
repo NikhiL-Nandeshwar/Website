@@ -44,7 +44,7 @@ export default function Footer() {
       id="footer"
       className="bg-[#eaeef4] dark:bg-gray-900 px-8 pt-12 pb-8 border-t border-gray-300 dark:border-gray-700 text-sm"
     >
-      <div className="max-w-screen-xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-[15px]">
+      <div className="max-w-screen-xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-[15px] text-center md:text-left">
 
         {/* Social Presence */}
         <div>
@@ -55,7 +55,7 @@ export default function Footer() {
             Let’s grow together! Follow us for updates and insights across platforms.
           </p>
 
-          <div className="flex gap-4 mt-2">
+          <div className="flex gap-4 mt-2 justify-center md:justify-start">
             {socialIcons.map(({ icon: Icon, color, href, label }, i) => (
               <a
                 key={i}
@@ -90,8 +90,8 @@ export default function Footer() {
           <h4 className="font-semibold text-cyan-600 dark:text-cyan-400 mb-3 text-lg">
             Contact
           </h4>
-          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            <li className="flex items-start gap-2">
+          <ul className="space-y-3 text-gray-700 dark:text-gray-300 justify-center md:justify-start">
+            <li className="flex items-start gap-1.5 justify-center md:justify-start">
               <MapPin className="w-4 h-4 mt-0.5" />
               <a
                 href="https://www.google.com/maps/place/Kolhapur,+Maharashtra,+India"
@@ -102,19 +102,19 @@ export default function Footer() {
                 Kolhapur, Maharashtra, India
               </a>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-1.5 justify-center md:justify-start">
               <Phone className="w-4 h-4 mt-0.5" />
               <a href="tel:+917666259073" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition">
                 +91 76662 59073
               </a>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-1.5 justify-center md:justify-start">
               <Phone className="w-4 h-4 mt-0.5" />
               <a href="tel:+917276722610" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition">
                 +91 72767 22610
               </a>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-1.5 justify-center md:justify-start">
               <Mail className="w-4 h-4 mt-0.5" />
               <a
                 href="mailto:nexspire-technologies@outlook.com"
