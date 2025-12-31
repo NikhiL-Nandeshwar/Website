@@ -101,7 +101,7 @@ export default function Navbar() {
                     className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight"
                 >
                     <Image
-                        src="/bg_logo.png"
+                        src="/nt_logo.png"
                         alt="Logo"
                         width={128}
                         height={104}
