@@ -117,10 +117,10 @@ export default function Footer() {
             <li className="flex items-start gap-1.5 justify-center md:justify-start">
               <Mail className="w-4 h-4 mt-0.5" />
               <a
-                href="mailto:nexspire-technologies@outlook.com"
+                href="mailto:support@nexspiretechnologies.in"
                 className="hover:text-cyan-700 dark:hover:text-cyan-400 transition"
               >
-                nexspire-technologies@outlook.com
+                support@nexspiretechnologies.in
               </a>
             </li>
           </ul>
