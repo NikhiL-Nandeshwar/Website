@@ -42,14 +42,36 @@ export default function Navbar() {
   useEffect(() => {
     const getActiveSectionFromScroll = () => {
       const scrollY = window.scrollY;
-      const headerOffset = 110;
+      const viewportHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const markerY = viewportHeight * 0.85;
       let activeId = LINKS[0].id;
 
+      // Ensure the last section becomes active when user reaches page end,
+      // even if that section is shorter than the viewport.
+      if (scrollY + viewportHeight >= documentHeight - 2) {
+        setCurrentSection(LINKS[LINKS.length - 1].id);
+        return;
+      }
+
+      // First pass: section that contains the marker line in viewport.
       for (const link of LINKS) {
         const el = document.getElementById(link.id);
         if (!el) continue;
-        const top = el.offsetTop - headerOffset;
-        if (scrollY >= top) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= markerY && rect.bottom >= markerY) {
+          activeId = link.id;
+          setCurrentSection(activeId);
+          return;
+        }
+      }
+
+      // Second pass fallback: last section whose top has crossed marker.
+      for (const link of LINKS) {
+        const el = document.getElementById(link.id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= markerY) {
           activeId = link.id;
         }
       }
