@@ -99,7 +99,7 @@ export default function IntroSection() {
                 initial={{ x: 0 }}
                 whileInView={{ x: "-110%" }}
                 viewport={{ once: true }}
-                transition={{ duration: 2.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 3, delay: 1.4, ease: [0.4, 0, 0.2, 1] }}
               >
                 <span
                   aria-hidden
@@ -112,7 +112,7 @@ export default function IntroSection() {
                 initial={{ x: 0 }}
                 whileInView={{ x: "110%" }}
                 viewport={{ once: true }}
-                transition={{ duration: 2.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 3, delay: 1.4, ease: [0.4, 0, 0.2, 1] }}
               >
                 <span
                   aria-hidden
