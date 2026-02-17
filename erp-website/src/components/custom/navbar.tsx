@@ -2,170 +2,157 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import clsx from "clsx";
 import Image from "next/image";
+import clsx from "clsx";
+import { Menu, X } from "lucide-react";
 import ToggleTheme from "../theme/toggle-theme";
 
-const SECTIONS = ["home", "about", "services", "features", "contact"];
+const LINKS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "features", label: "Why Us" },
+  { id: "footer", label: "Contact" },
+];
 
-/**
- * Navbar component – Responsive header with logo, section links, scroll highlighting, and theme toggle.
- * Handles desktop and mobile layouts with animated dropdown menu and current section tracking.
- */
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const [currentSection, setCurrentSection] = useState<string>("home");
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [currentSection, setCurrentSection] = useState<string>("home");
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+  useEffect(() => {
+    const setFromHash = () => {
+      const hashId = window.location.hash.replace("#", "");
+      if (hashId && LINKS.some((link) => link.id === hashId)) {
+        setCurrentSection(hashId);
+      }
+    };
 
-    useEffect(() => {
-        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-            const visibleSections = entries
-                .filter((entry) => entry.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    setFromHash();
+    window.addEventListener("hashchange", setFromHash);
+    return () => window.removeEventListener("hashchange", setFromHash);
+  }, []);
 
-            if (visibleSections.length > 0) {
-                const topSection = visibleSections[0];
-                const id = topSection.target.getAttribute("id");
-                if (id) setCurrentSection(id);
-            }
-        };
+  useEffect(() => {
+    const getActiveSectionFromScroll = () => {
+      const scrollY = window.scrollY;
+      const headerOffset = 110;
+      let activeId = LINKS[0].id;
 
-        const observer = new IntersectionObserver(handleIntersect, {
-            threshold: 0.4, // Adjusted threshold
+      for (const link of LINKS) {
+        const el = document.getElementById(link.id);
+        if (!el) continue;
+        const top = el.offsetTop - headerOffset;
+        if (scrollY >= top) {
+          activeId = link.id;
+        }
+      }
+
+      setCurrentSection(activeId);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          getActiveSectionFromScroll();
+          ticking = false;
         });
+        ticking = true;
+      }
+    };
 
-        SECTIONS.forEach((id) => {
-            const el = document.getElementById(id);
-            if (el) observer.observe(el);
-        });
+    getActiveSectionFromScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", getActiveSectionFromScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", getActiveSectionFromScroll);
+    };
+  }, []);
 
-        return () => {
-            SECTIONS.forEach((id) => {
-                const el = document.getElementById(id);
-                if (el) observer.unobserve(el);
-            });
-        };
-    }, []);
+  const handleNavClick = (id: string) => {
+    setCurrentSection(id);
+    setIsOpen(false);
+  };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            let current = "home";
-            let minDistance = Infinity;
+  return (
+    <header
+      className={clsx(
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
+        scrolled
+          ? "bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-[0_12px_30px_-18px_rgba(0,0,0,0.45)] border-b border-cyan-100/70 dark:border-cyan-900/50"
+          : "bg-transparent"
+      )}
+    >
+      <div className="section-shell flex items-center justify-between py-2">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/nt_logo.png"
+            alt="Nexspire Technologies"
+            width={146}
+            height={62}
+            className="h-14 w-auto md:h-16"
+            priority
+          />
+        </Link>
 
-            for (const id of SECTIONS) {
-                const section = document.getElementById(id);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    const distance = Math.abs(rect.top);
+        <nav className="hidden md:flex gap-7 items-center text-sm font-semibold tracking-wide">
+          {LINKS.map((link) => (
+            <Link
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => handleNavClick(link.id)}
+              className={clsx(
+                "transition-colors",
+                currentSection === link.id
+                  ? "text-cyan-600 dark:text-cyan-300"
+                  : "text-slate-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-300"
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <ToggleTheme />
+        </nav>
 
-                    if (rect.top <= 40 && distance < minDistance) {
-                        minDistance = distance;
-                        current = id;
-                    }
-                }
-            }
+        <div className="md:hidden flex items-center gap-2">
+          <ToggleTheme />
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+            className="p-2 rounded-md border border-cyan-100 dark:border-cyan-900/60"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
 
-            setCurrentSection(current);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial check
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    return (
-        <header
-            className={clsx(
-                "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out",
-                scrolled
-                    ? "bg-white dark:bg-gray-800 shadow-md text-gray-800 dark:text-gray-100"
-                    : "bg-transparent text-cyan-700 dark:text-cyan-400"
-            )}
-        >
-            <div className="max-w-screen-xl mx-auto px-4 md:px-5 py-0.5 flex items-center justify-between">
-                {/* Logo */}
-                <Link
-                    href="/"
-                    className="flex items-center gap-1.5 text-xl md:text-3xl font-bold tracking-tight"
-                >
-                    <Image
-                        src="/nt_logo.png"
-                        alt="Logo"
-                        width={128}
-                        height={104}
-                        className="w-32 h-26"
-                        priority
-                    />
-                </Link>
-
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex gap-6 items-center font-medium">
-                    {SECTIONS.map((id) => (
-                        <Link
-                            key={id}
-                            href={`#${id === "contact" ? "footer" : id}`}
-                            className={clsx(
-                                "transition-colors",
-                                currentSection === id
-                                    ? "text-cyan-400 dark:text-yellow-600"
-                                    : "hover:text-cyan-400"
-                            )}
-                        >
-                            {id.charAt(0).toUpperCase() + id.slice(1)}
-                        </Link>
-                    ))}
-                    <ToggleTheme />
-                </nav>
-
-                {/* Mobile: Toggle Theme & Menu */}
-                <div className="md:hidden flex items-center gap-2">
-                    <ToggleTheme />
-                    <button onClick={toggleMenu} aria-label="Toggle menu">
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Dropdown */}
-            {isOpen && (
-                <nav
-                    className={clsx(
-                        "md:hidden px-6 pb-4 space-y-3 py-2 text-sm font-medium transition-all",
-                        scrolled
-                            ? "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100"
-                            : "bg-gradient-to-b from-cyan-600 to-cyan-700 text-white"
-                    )}
-                >
-                    {["home", "about", "services", "features", "contact"].map((id) => {
-                        const hrefId = id === "contact" ? "footer" : id;
-                        return (
-                            <Link
-                                key={id}
-                                href={`#${hrefId}`}
-                                onClick={() => setIsOpen(false)}
-                                className={clsx(
-                                    "block hover:text-cyan-300",
-                                    currentSection === hrefId && "text-cyan-200 font-semibold"
-                                )}
-                            >
-                                {id.charAt(0).toUpperCase() + id.slice(1)}
-                            </Link>
-                        );
-                    })}
-                </nav>
-            )}
-        </header>
-    );
+      {isOpen && (
+        <nav className="md:hidden px-6 pb-5 pt-1 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-cyan-100/80 dark:border-cyan-900/60 space-y-3 text-sm font-medium">
+          {LINKS.map((link) => (
+            <Link
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => handleNavClick(link.id)}
+              className={clsx(
+                "block transition-colors",
+                currentSection === link.id
+                  ? "text-cyan-600 dark:text-cyan-300"
+                  : "text-slate-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-300"
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      )}
+    </header>
+  );
 }

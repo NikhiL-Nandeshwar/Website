@@ -1,75 +1,62 @@
-'use client'
+"use client";
 
-import { Layers3, Zap, LayoutGrid } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Headset, LayoutGrid, ShieldCheck } from "lucide-react";
 
 const features = [
   {
-    title: "Smart & Scalable Systems",
-    desc: "Whether it's an apartment, society, or business — our platforms are built to scale with your operations, offering automation, seamless workflows and a modern user experience.",
-    icon: Layers3,
-  },
-  {
-    title: "Modern Websites that Inspire Trust",
-    desc: "We build fast, responsive and SEO-ready websites designed to elevate your brand, improve engagement, and convert visitors into customers or members.",
+    title: "Premium-First Execution",
+    desc: "Design direction, copy, and frontend polish are aligned to present your business as credible and high-quality.",
     icon: LayoutGrid,
   },
   {
-    title: "Digital Growth & Dedicated Support",
-    desc: "From SEO and ads to onboarding and training — we ensure you're visible online and supported throughout your digital journey.",
-    icon: Zap,
+    title: "Operational Reliability",
+    desc: "Your system architecture is built for maintainability, role access control, and practical everyday use by teams.",
+    icon: ShieldCheck,
   },
-]
+  {
+    title: "Hands-On Support",
+    desc: "From onboarding to updates, our team stays involved so your product and campaigns keep improving over time.",
+    icon: Headset,
+  },
+];
 
 export default function FeaturesSection() {
   return (
-    <section
-      id="features"
-      className="py-20 bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
-    >
-      <div className="max-w-screen-xl mx-auto px-6 text-center">
-
-        <motion.h2
-          className="text-4xl font-bold mb-5 text-gray-900 dark:text-white"
-          initial={{ opacity: 0, y: -16 }}
+    <section id="features" className="py-20 md:py-24">
+      <div className="section-shell">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-12"
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
         >
-          Built to Help You Succeed
-        </motion.h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-700 dark:text-cyan-300 mb-3">
+            Why Clients Choose Us
+          </p>
+          <h2 className="section-title text-slate-900 dark:text-slate-50">
+            A Team That Builds for Long-Term Business Value
+          </h2>
+        </motion.div>
 
-        <motion.p
-          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-16 text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Smart systems, modern websites, and long-term growth support — helping you build reliable digital foundations.
-        </motion.p>
-
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {features.map((item, idx) => (
             <motion.div
-              key={idx}
-              className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
+              key={item.title}
+              className="group glass-card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/80 dark:hover:border-cyan-700/70 hover:shadow-[0_24px_50px_-30px_rgba(8,145,178,0.55)]"
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + idx * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
+              transition={{ delay: idx * 0.12, duration: 0.45 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-100/10 to-transparent dark:from-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-
-              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-5 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400 group-hover:scale-110 transition-transform duration-300">
-                <item.icon size={26} />
+              <div className="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-100 dark:border-cyan-900/50 flex items-center justify-center mb-5 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-[0_10px_20px_-14px_rgba(8,145,178,0.65)]">
+                <item.icon className="w-6 h-6 text-cyan-600 dark:text-cyan-300" />
               </div>
-
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
                 {item.title}
               </h3>
-
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
@@ -77,5 +64,5 @@ export default function FeaturesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

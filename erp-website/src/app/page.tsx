@@ -9,7 +9,6 @@ import WhatsAppBubble from "@/components/custom/whatsapp-bubble";
 export default function Home() {
   return (
     <>
-    {/* test */}
       <Navbar />
       <IntroSection />
       <AboutSection />
