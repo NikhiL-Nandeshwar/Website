@@ -95,7 +95,7 @@ export default function IntroSection() {
 
               <motion.div
                 aria-hidden
-                className="absolute top-0 left-0 h-full w-1/2 bg-[#1e95bc] dark:bg-[#302104] border-r border-amber-300/20 dark:border-amber-700/30"
+                className="absolute top-0 left-0 h-full w-1/2 bg-[#2c88a6] dark:bg-[#2f250f] border-r border-amber-300/20 dark:border-amber-700/30"
                 initial={{ x: 0 }}
                 whileInView={{ x: "-110%" }}
                 viewport={{ once: true }}
@@ -108,7 +108,7 @@ export default function IntroSection() {
               </motion.div>
               <motion.div
                 aria-hidden
-                className="absolute top-0 right-0 h-full w-1/2 bg-[#1e95bc] dark:bg-[#302104] border-l border-amber-300/20 dark:border-amber-700/30"
+                className="absolute top-0 right-0 h-full w-1/2 bg-[#2c88a6] dark:bg-[#2f250f] border-l border-amber-300/20 dark:border-amber-700/30"
                 initial={{ x: 0 }}
                 whileInView={{ x: "110%" }}
                 viewport={{ once: true }}
