@@ -14,7 +14,7 @@ const POINTS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-24">
+    <section id="about" className="py-12">
       <div className="section-shell">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-start">
           <motion.div

@@ -21,7 +21,7 @@ const PROOF_ITEMS = [
 
 export default function IntroSection() {
   return (
-    <section id="home" className="pt-28 pb-20 md:pb-24">
+    <section id="home" className="pt-28 pb-20">
       <div className="section-shell">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
           <motion.div

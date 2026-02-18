@@ -83,7 +83,7 @@ const whatsappNumber = "917666259073";
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-24">
+    <section id="services" className="py-16">
       <div className="section-shell">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-12"
