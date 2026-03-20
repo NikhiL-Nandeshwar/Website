@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { CursorBubbles } from "@/components/custom/cursor-bubbles";
 
 // Load fonts
 const geistSans = localFont({
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <CursorBubbles />
         {children}
       </body>
     </html>

@@ -120,7 +120,7 @@ export default function Navbar() {
             alt="Nexspire Technologies"
             width={146}
             height={62}
-            className="h-14 w-auto md:h-16"
+            className="h-16 w-auto md:h-20"
             priority
           />
         </Link>
