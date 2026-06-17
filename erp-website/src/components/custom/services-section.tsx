@@ -30,15 +30,13 @@ const services = [
     icon: GraduationCap,
     color: "text-violet-600 dark:text-violet-300",
     points: [
-      "Online admission workflow with application tracking, docs management",
-      "Academic management for classes, timetables, examinations, and results",
-      "Student, faculty, and staff records with attendance and leave management",
-      "Fee collection, accounting, and automated payment reminders",
-      "Comprehensive reports, dashboards, and parent communication tools",
+      "Online admissions, student records, and document management",
+      "Academics, examinations, attendance, and timetable management",
+      "Fees, staff management, reports, and parent communication",
     ],
   },
   {
-    title: "Business ERP Solutions",
+    title: "Custom Business Solutions",
     icon: FileBarChart2,
     color: "text-sky-600 dark:text-sky-300",
     points: [
