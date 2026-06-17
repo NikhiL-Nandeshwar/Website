@@ -24,16 +24,16 @@ const services = [
       "Role-based access for committee and admin teams",
     ],
   },
-  {
-    title: "Business ERP Solutions",
-    icon: FileBarChart2,
-    color: "text-sky-600 dark:text-sky-300",
-    points: [
-      "Sales, accounts, and workflow automation modules",
-      "Reports and dashboards for faster decisions",
-      "Custom integrations based on your operation model",
-    ],
-  },
+  // {
+  //   title: "Business ERP Solutions",
+  //   icon: FileBarChart2,
+  //   color: "text-sky-600 dark:text-sky-300",
+  //   points: [
+  //     "Sales, accounts, and workflow automation modules",
+  //     "Reports and dashboards for faster decisions",
+  //     "Custom integrations based on your operation model",
+  //   ],
+  // },
   {
     title: "Website Design and Development",
     icon: MonitorSmartphone,
