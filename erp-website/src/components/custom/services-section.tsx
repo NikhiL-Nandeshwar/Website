@@ -6,6 +6,7 @@ import {
   Building2,
   CheckCircle2,
   FileBarChart2,
+  GraduationCap,
   IdCard,
   Megaphone,
   MonitorSmartphone,
@@ -24,16 +25,28 @@ const services = [
       "Role-based access for committee and admin teams",
     ],
   },
-  // {
-  //   title: "Business ERP Solutions",
-  //   icon: FileBarChart2,
-  //   color: "text-sky-600 dark:text-sky-300",
-  //   points: [
-  //     "Sales, accounts, and workflow automation modules",
-  //     "Reports and dashboards for faster decisions",
-  //     "Custom integrations based on your operation model",
-  //   ],
-  // },
+  {
+    title: "School ERP System",
+    icon: GraduationCap,
+    color: "text-violet-600 dark:text-violet-300",
+    points: [
+      "Online admission workflow with application tracking, docs management",
+      "Academic management for classes, timetables, examinations, and results",
+      "Student, faculty, and staff records with attendance and leave management",
+      "Fee collection, accounting, and automated payment reminders",
+      "Comprehensive reports, dashboards, and parent communication tools",
+    ],
+  },
+  {
+    title: "Business ERP Solutions",
+    icon: FileBarChart2,
+    color: "text-sky-600 dark:text-sky-300",
+    points: [
+      "Sales, accounts, and workflow automation modules",
+      "Reports and dashboards for faster decisions",
+      "Custom integrations based on your operation model",
+    ],
+  },
   {
     title: "Website Design and Development",
     icon: MonitorSmartphone,
@@ -104,7 +117,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
