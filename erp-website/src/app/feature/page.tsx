@@ -1,5 +1,5 @@
-import FeaturesSection from "@/components/custom/feature-section";
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-    return (<FeaturesSection />);
+  permanentRedirect("/#features");
 }

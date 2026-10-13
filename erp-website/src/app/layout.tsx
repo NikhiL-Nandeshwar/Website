@@ -18,6 +18,9 @@ const geistMono = localFont({
 // SEO Metadata
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexspiretechnologies.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Nexspire Technologies | Software, Websites and Growth Solutions",
     template: "%s | Nexspire Technologies",
@@ -31,6 +34,19 @@ export const metadata: Metadata = {
     url: "https://www.nexspiretechnologies.in",
     siteName: "Nexspire Technologies",
     type: "website",
+    images: [
+      {
+        url: "/nt_logo.png",
+        alt: "Nexspire Technologies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nexspire Technologies",
+    description:
+      "Software products, websites, digital cards, and social media bundles for modern businesses.",
+    images: ["/nt_logo.png"],
   },
 };
 
@@ -48,4 +64,3 @@ export default function RootLayout({
     </html>
   );
 }
-

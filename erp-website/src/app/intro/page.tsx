@@ -1,5 +1,5 @@
-import IntroSection from "@/components/custom/intro-section";
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-    return (<IntroSection />);
+  permanentRedirect("/#home");
 }

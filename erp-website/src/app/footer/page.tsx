@@ -1,5 +1,5 @@
-import Footer from "@/components/custom/footer";
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-    return (<Footer />);
+  permanentRedirect("/#footer");
 }

@@ -24,6 +24,7 @@ export default function WhatsAppBubble() {
       <Link
         href="https://wa.me/917666259073?text=Hi%20Nexspire%20team.%20I%20want%20details%20about%20your%20services."
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
         className="flex items-center justify-center w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-bounce-slow"
       >

@@ -1,5 +1,5 @@
-import ServicesSection from "@/components/custom/services-section";
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-    return (<ServicesSection />);
+  permanentRedirect("/#services");
 }

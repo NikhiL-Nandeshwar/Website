@@ -69,7 +69,6 @@ export default function AboutSection() {
                 width={700}
                 height={520}
                 className="w-full h-auto object-cover rounded-2xl"
-                priority
               />
             </div>
           </motion.div>

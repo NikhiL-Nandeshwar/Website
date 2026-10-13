@@ -1,5 +1,5 @@
-import AboutSection from "@/components/custom/about-section";
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-    return (<AboutSection />);
+  permanentRedirect("/#about");
 }

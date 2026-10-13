@@ -121,7 +121,6 @@ export default function Navbar() {
             width={146}
             height={62}
             className="h-16 w-auto md:h-20"
-            priority
           />
         </Link>
 
@@ -149,6 +148,8 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             className="p-2 rounded-md border border-cyan-100 dark:border-cyan-900/60"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -157,7 +158,10 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <nav className="md:hidden px-6 pb-5 pt-1 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-cyan-100/80 dark:border-cyan-900/60 space-y-3 text-sm font-medium">
+        <nav
+          id="mobile-navigation"
+          className="md:hidden px-6 pb-5 pt-1 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-cyan-100/80 dark:border-cyan-900/60 space-y-3 text-sm font-medium"
+        >
           {LINKS.map((link) => (
             <Link
               key={link.id}
