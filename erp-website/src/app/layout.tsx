@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { CursorBubbles } from "@/components/custom/cursor-bubbles";
 
 // Load fonts
 const geistSans = localFont({
@@ -16,8 +17,21 @@ const geistMono = localFont({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "Nexspire Technologies",
-  description: "Nexspire Technologies",
+  metadataBase: new URL("https://www.nexspiretechnologies.in"),
+  title: {
+    default: "Nexspire Technologies | Software, Websites and Growth Solutions",
+    template: "%s | Nexspire Technologies",
+  },
+  description:
+    "Nexspire Technologies builds society and business software, premium websites, digital business cards, and social media growth bundles.",
+  openGraph: {
+    title: "Nexspire Technologies",
+    description:
+      "Software products, websites, digital cards, and social media bundles for modern businesses.",
+    url: "https://www.nexspiretechnologies.in",
+    siteName: "Nexspire Technologies",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <CursorBubbles />
         {children}
       </body>
     </html>
